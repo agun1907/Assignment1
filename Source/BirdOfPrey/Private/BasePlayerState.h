@@ -20,7 +20,7 @@ public:
     float TimeOfLastDeath;
 
     UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-    void AddScore(float Score);
+        void AddScore(float InScore);
 
     UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
     void ConsumeLife();
@@ -31,3 +31,4 @@ public:
     UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
     void Reset();
 };
+

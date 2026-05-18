@@ -1,6 +1,42 @@
 #include "BaseAIController.h"
+#include "BasePlayerController.h"
+#include "BaseGameAgent.h"
 
-FVector ABaseAIController::GetMoveTarget()
+void ABaseAIController::SelectTarget()
 {
-    return FVector::ZeroVector;
+}
+
+void ABaseAIController::AimAt()
+{
+}
+
+void ABaseAIController::CheckFire()
+{
+}
+
+void ABaseAIController::UpdateAim()
+{
+}
+
+bool ABaseAIController::ShouldStartFire()
+{
+    return false;
+}
+
+bool ABaseAIController::ShouldStopFire()
+{
+    return false;
+}
+
+void ABaseAIController::StartFire()
+{
+}
+
+void ABaseAIController::StopFire()
+{
+}
+
+bool ABaseAIController::ShouldUpdateAim()
+{
+    return false;
 }

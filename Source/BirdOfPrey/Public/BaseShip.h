@@ -2,8 +2,9 @@
 
 #include "CoreMinimal.h"
 #include "BaseGameAgent.h"
-#include "GameFramework/FloatingPawnMovementComponent.h"
 #include "BaseShip.generated.h"
+
+class UFloatingPawnMovement;
 
 UCLASS()
 class BIRDOFPREY_API ABaseShip : public ABaseGameAgent
@@ -14,5 +15,5 @@ public:
     ABaseShip();
 
     UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
-    UFloatingPawnMovementComponent* FloatingPawnMovement;
+        UFloatingPawnMovement* FloatingPawnMovement;
 };

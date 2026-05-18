@@ -1,7 +1,7 @@
 #include "BaseShip.h"
-#include "GameFramework/FloatingPawnMovementComponent.h"
+#include "GameFramework/FloatingPawnMovement.h"
 
 ABaseShip::ABaseShip()
 {
-    FloatingPawnMovement = CreateDefaultSubobject<UFloatingPawnMovementComponent>(TEXT("FloatingPawnMovement"));
+    FloatingPawnMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("FloatingPawnMovement"));
 }

@@ -34,5 +34,5 @@ public:
     bool HasFinishedFiring();
 
     UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-    bool IsFiring();
+   virtual bool IsFiring();
 };

@@ -1,6 +1,6 @@
 #include "BasePlayerState.h"
 
-void ABasePlayerState::AddScore(float Score)
+void ABasePlayerState::AddScore(float InScore)
 {
 }
 
@@ -16,3 +16,4 @@ bool ABasePlayerState::HasRemainingLives()
 void ABasePlayerState::Reset()
 {
 }
+
