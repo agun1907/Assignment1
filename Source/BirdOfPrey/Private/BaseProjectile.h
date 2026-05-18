@@ -1,0 +1,70 @@
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "Sound/SoundBase.h"
+#include "Particles/ParticleSystem.h"
+#include "BaseProjectile.generated.h"
+
+class ABaseGameAgent;
+
+UCLASS()
+class BIRDOFPREY_API ABaseProjectile : public AActor
+{
+    GENERATED_BODY()
+
+public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
+    float ProjectileSpeed;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
+    float Damage;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
+    UParticleSystem* DetonationEmitter;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
+    float GroundUnitCheckDistance;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
+    float GroundUnitCheckAngle;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
+    ABaseGameAgent* GroundTarget;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
+    float DesiredZ;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
+    USoundBase* ImpactSound;
+
+    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+    void InitialiseProjectile();
+
+    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+    FVector GetInitialVelocity();
+
+    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+    void DealDamageTo(AActor* TargetActor);
+
+    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+    void OnHit();
+
+    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+    TEnumAsByte<ECollisionChannel> GetInstigatorCollisionChannel();
+
+    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+    void CheckForGroundUnitTarget();
+
+    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+    bool ShouldCheckForGroundTarget();
+
+    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+    void AdjustToTarget();
+
+    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+    bool IsEnemyProjectile();
+
+    UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+    void AdjustToDesiredZ();
+};
