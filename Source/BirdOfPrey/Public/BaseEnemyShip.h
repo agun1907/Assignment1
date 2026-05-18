@@ -4,7 +4,7 @@
 #include "BaseShip.h"
 #include "BaseEnemyShip.generated.h"
 
-class ABaseShipAIController;
+class ABaseAIController;
 
 UCLASS()
 class BIRDOFPREY_API ABaseEnemyShip : public ABaseShip
@@ -13,8 +13,8 @@ class BIRDOFPREY_API ABaseEnemyShip : public ABaseShip
 
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
-    ABaseShipAIController* ShipAIController;
+        ABaseAIController* ShipAIController;
 
     UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-    void Move();
+        void Move();
 };
